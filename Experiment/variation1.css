@@ -1,0 +1,57 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+section.home-section {
+    background: #333;
+    padding: 80px 20px;
+}
+
+.accordion-container {
+    max-width: 1200px;
+    margin: auto;
+    
+    padding: 80px 20px;
+}
+
+.accordion-text {
+    width: 100%;
+    max-width: 771px;
+    background: #fff;
+    border-radius: 8px;
+    padding: 17px;
+    margin-bottom: 25px;
+        background: orange;
+}
+
+
+.accordion-collapse{
+    display: none;
+}
+
+.accordion-body {
+    color: #333;
+    font-size: 18px;
+    line-height: 24px;
+    font-family: poppins;
+    /* display:none; */
+
+}
+
+button.accordion-button {
+    width: 100%;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    
+    background: gainsboro;
+
+}
+
+span.right {
+    transform: rotate(90deg);
+    width: 100%;
+    max-width: 47px;
+}

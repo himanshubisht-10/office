@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navbar</title>
+    <style>
+        
+nav.navbar.navbar-expand-lg.bg-body-tertiary {
+    padding: 0px 11px;
+    background: grey;
+}
+
+.container-fluid {
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+ul.navbar-nav.me-auto.mb-2.mb-lg-0 {
+    display: flex;
+    justify-content: space-between;
+    gap:120px;
+    align-items: center;
+}
+
+.collapse.navbar-collapse {
+    display: flex;
+    align-items: center;
+}
+
+a.nav-link {
+    font-size: 25px;
+    line-height: 34px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 400;
+    font-family: poppins;
+}
+
+li.nav-item.dropdown {
+   
+    justify-content: space-between;
+    align-items: center;
+   
+}
+
+input.form-control.me-2 {
+    min-height: 40px;
+    border-radius: 6px;
+    padding: 0px 12px;
+    color: #333;
+    font-size: 18px;
+}
+
+button.btn.btn-outline-success {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: black;
+    background: lightgreen;
+}
+
+a.dropdown-item {
+    font-size: 18px;
+    font-weight: 300;
+    color: white;
+    text-decoration: none;
+    display:block;
+}
+
+span.dropdown-arrow {
+    transform: rotate(92deg);
+    margin-left: 10px;
+    font-size: 28px;
+    display: inline-block;
+}
+
+ul.dropdown-menu {
+    display: none;
+}
+
+
+form.d-flex {
+    margin-left: 26px;
+}
+
+li.nav-item {
+    list-style: none;
+}
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle">
+            Dropdown <span class="dropdown-arrow">></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+           
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        
+        <button class="btn btn-outline-success" type="submit">submit</button>
+      </form>
+      
+    </div>
+  </div>
+</nav>
+
+<script src="variation5.js"></script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scrowling</title>
+    <style>
+        
+body {
+    background: #333;
+}
+        
+nav#navbar-example2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0px 11px;
+}
+
+nav#navbar-example2 {
+    display: flex;
+    justify-content: space-between;
+    background: gray;
+    border-radius: 8px;
+    padding: 6px 18px;
+    align-items: center;
+}
+
+a.navbar-brand {
+    font-family: poppins;
+    font-size: 28px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+}
+
+
+ul.nav.nav-pills {
+    display: flex;
+    gap: 180px;
+    align-items: center;
+}
+
+a.nav-link {
+    font-size: 24px;
+    font-family: poppins;
+    text-decoration: none;
+    color: #333;
+    line-height: 15px;
+}
+li.nav-item {
+    list-style: none;
+}
+
+li.nav-item.dropdown {
+    display: flex;
+    align-items: center;
+}
+a.dropdown-item {
+    font-size: 24px;
+    color: orange;
+    text-decoration: none;
+    line-height: 31px;
+
+}
+li {
+    list-style: none;
+}
+.dropdown-menu {
+    display: none;
+}
+
+
+.scrollspy-example.bg-body-tertiary.p-3.rounded-2 {
+    padding: 12px 23px;
+    margin: auto;
+    width: 100%;
+    max-width: 618px;
+    background: beige;
+        border-radius: 8px;
+        
+    overflow-y: scroll;
+    height: 266px;
+}
+
+section.hero-section {
+    padding: 80px 20px;
+}
+    
+h4#scrollspyHeading1 {
+    font-size: 27px;
+    line-height: 28px;
+    color: #333;
+}
+
+h4#scrollspyHeading2 {
+    font-size: 27px;
+    line-height: 28px;
+    color: #333;
+}
+
+h4#scrollspyHeading3 {
+    font-size: 27px;
+    line-height: 28px;
+    color: #333;
+}
+
+h4#scrollspyHeading4 {
+    font-size: 27px;
+    line-height: 28px;
+    color: #333;
+}
+
+h4#scrollspyHeading5 {
+    font-size: 27px;
+    line-height: 28px;
+    color: #333;
+}
+p {
+    font-size: 20px;
+    font-weight: 400;
+    color: #333;
+}
+
+span.dropdown-arrow {
+    display: inline-block;
+    transform: rotate(90deg);
+}
+
+.nav-item:hover{
+    list-style: none;
+    padding: 2px 8px;
+    border-radius: 6px;
+    background: lightblue;
+}
+.dropdown-menu.show {
+    display: block;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 4px 6px;
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+    <nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link" href="#scrollspyHeading1">First</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#scrollspyHeading2">Second</a>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown <span class="dropdown-arrow">></span></a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#scrollspyHeading3">Third</a></li>
+        <li><a class="dropdown-item" href="#scrollspyHeading4">Fourth</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#scrollspyHeading5">Fifth</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<section class="hero-section">
+    <div class="container">
+
+<div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
+  <h4 id="scrollspyHeading1">First heading</h4>
+  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+    Quaerat sunt quae explicabo doloremque eum voluptatibus 
+    adipisci voluptate quos, facere molestias ducimus dicta
+     hic eaque tempore dignissimos et quas error illum?</p>
+  <h4 id="scrollspyHeading2">Second heading</h4>
+  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+    Quaerat sunt quae explicabo doloremque eum voluptatibus 
+    adipisci voluptate quos, facere molestias ducimus dicta
+     hic eaque tempore dignissimos et quas error illum?</p>
+  <h4 id="scrollspyHeading3">Third heading</h4>
+  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+    Quaerat sunt quae explicabo doloremque eum voluptatibus 
+    adipisci voluptate quos, facere molestias ducimus dicta
+     hic eaque tempore dignissimos et quas error illum?</p>
+  <h4 id="scrollspyHeading4">Fourth heading</h4>
+  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+    Quaerat sunt quae explicabo doloremque eum voluptatibus 
+    adipisci voluptate quos, facere molestias ducimus dicta
+     hic eaque tempore dignissimos et quas error illum?</p>
+  <h4 id="scrollspyHeading5">Fifth heading</h4>
+  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+    Quaerat sunt quae explicabo doloremque eum voluptatibus 
+    adipisci voluptate quos, facere molestias ducimus dicta
+     hic eaque tempore dignissimos et quas error illum?</p>
+</div>
+</div>
+</section>
+
+<script src="variation6.js"></script>
+</body>
+</html>

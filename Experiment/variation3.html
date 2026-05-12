@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>buttons</title>
+    <style>
+
+section.hero-section {
+    padding: 80px 20px;
+    background: gainsboro;
+}
+
+.container {
+    margin: auto;
+    max-width: 1200p;
+}
+button.btn-btn-primary {
+    padding: 11px 22px;
+    background: blue;
+    border: none;
+    color: white;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.btn-group {
+    display: flex;
+
+}
+
+button.btn-btn-primary-dropdown {
+    background:darkblue;
+    color: white;
+    font-size: 30px;
+    border: none;
+}
+
+ button.btn-btn-primary:hover{
+    background: darkblue;
+}
+ button.btn-btn-primary-dropdown:hover{
+      background: darkblue;
+}
+
+a.dropdown-item {
+    font-size: 24px;
+    color: #333;
+    font-weight: 300;
+}
+
+li {
+    list-style: none;
+    margin-bottom:30px;
+    text-align: center;
+}
+
+ul.menu-dropdown {
+    width: 100%;
+    max-width: 270px;
+    background: orange;
+    padding: 39px 26px;
+    border-radius: 8px;
+}
+
+
+ul.menu-dropdown {
+    width: 100%;
+    max-width: 304px;
+    background: orange;
+    padding: 20px 5px;
+    border-radius: 8px;
+    display: none;
+}
+    </style>
+</head>
+<body>
+    <section class="hero-section">
+        <div class="container">
+    <div class="btn-group">
+        <button type="button" class="btn-btn-primary">1</button>
+        <button type="button" class="btn-btn-primary">2</button>
+        <div class="btn-group">
+            <button type="button" class="btn-btn-primary-dropdown">dropdown
+                <span class="right">></span>
+            </button>
+            </div>
+            </div>
+            <ul class="menu-dropdown">
+                <li><a class="dropdown-item" href="#">Dropdown link</a></li>
+      <li><a class="dropdown-item" href="#">Dropdown link</a></li>
+    </ul>
+        </div>
+    </div>
+    </div>
+    </section>
+<script src="variation3.js"></script>
+</body>
+</html>

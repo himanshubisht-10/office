@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+.home-section {
+    padding: 80px 20px;
+    background: #2667;
+
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.box {
+    background: grey;
+    padding: 13px 16px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    width: 67%;
+    max-width: 765px;
+}
+
+button.btn-btn-primary {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 300;
+    color: white;
+    background: purple;
+    padding: 8px 16px;
+    border-radius: 6px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+h1#exampleModalLabel {
+    font-size: 35px;
+    line-height: 42px;
+    color: #333;
+}
+span.close-arrow {
+    font-size: 35px;
+    color: black;
+}
+div#exampleModal {
+    width: 100%;
+    max-width: 742px;
+    background: lightgreen;
+    border-radius: 6px;
+    margin-top: 23px;
+    padding: 12px;
+    display:none;
+    position: fixed;
+    top:-300px;
+     transition: 0.6s ease;
+     z-index: 100000;
+
+}
+
+label.col-form-label {
+    font-size: 24px;
+    line-height: 28px;
+    color: #333;
+    font-weight: 300;
+}
+input#recipient-name {
+    min-height: 40px;
+    min-width: 81%;
+    border-radius: 6px;
+    background: gainsboro;
+    margin-top:20px;
+    font-size:20px;color:#333
+}
+textarea#message-text {
+    min-width: 81%;
+    min-height: 81px;
+    border-radius: 8px;
+    background: gainsboro;
+    margin-top: 20px;
+}
+button.btn.btn-secondary {
+    font-size: 24px;
+    border-radius: 6px;
+    padding: 8px;
+    color: white;
+    background: grey;
+}
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 130px;
+    margin-top: 12px;
+    gap: 12px;
+}
+button.btn.btn-primary {
+    font-size: 18px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    background: blue;
+}
+div#exampleModal.show{
+    display:block;
+    top:0;
+
+}
+    </style>
+</head>
+<body>
+    <div class="home-section">
+        <div class="container">
+            <div class="box">
+<button type="button" class="btn-btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Open modal for @mdo</button>
+<button type="button" class="btn-btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@fat">Open modal for @fat</button>
+<button type="button" class="btn-btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Open modal for @getbootstrap</button>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
+        <span class="close-arrow">+</span>
+      </div>
+      <hr>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Recipient:</label><br>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">Message:</label><br>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <hr>
+      <div class="modal-footer">
+        <button type="button" class="btn-btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<script src="variation8.js"></script>
+</body>
+</html>

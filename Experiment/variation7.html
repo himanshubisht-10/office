@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>offcanvas</title>
+    <style>
+      body {
+    background: gray;
+      }
+
+      
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 80px 20px;
+    background: gray;
+    border-radius: 6px;
+
+}
+a.btn-btn-primary {
+    font-size: 24px;
+    font-family: poppins;
+    text-decoration: none;
+    color: white;
+    background: blue;
+    border-radius: 6px;
+    padding: 8px 10px;
+}
+button.btn-btn-primary {
+    font-size: 24px;
+    font-family: poppins;
+    color: white;
+    background: blue;
+    border-radius: 6px;
+    padding: 6px 12px;
+    margin-left: 12px;
+}
+h5#offcanvasExampleLabel {
+    font-size: 35px;
+    font-family: poppins;
+    color: #333;
+}
+span.btn-close {
+    font-size: 24px;
+  
+    color: #333;
+}
+.offcanvas-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.offcanvas-body {
+    font-size: 23px;
+    line-height: 48px;
+    color: #333;
+}
+button.btn.btn-secondary.dropdown-toggle {
+    border-radius: 6px;
+    padding: 12px 24px;
+    font-size: 24px;
+    background: green;
+    color: white;
+}
+a.dropdown-item {
+    font-size: 18px;
+    color:#333;
+    text-decoration: none;
+    line-height: 30px;
+}
+li {
+    list-style: none;
+}
+div#offcanvasExample {
+    
+    max-width: 524px;
+    background: orange;
+    padding: 12px 10px;
+    margin-top: 34px;
+    border-radius: 6px;
+    display:none;
+  position: fixed;
+  top: 0;
+  left: -300px;   /* screen ke bahar hidden */
+  width: 300px;
+  height: 100%;
+  background: orange;
+  transition: 0.6s ease;  /* smooth animation */
+  z-index: 1000;
+}
+
+ul.dropdown-menu {
+    display: none;
+}
+ul.dropdown-menu.show{
+
+display:block;
+}
+div#offcanvasExample.show{
+  display:block;
+  left:0;
+}
+    </style>
+</head>
+<body>
+  <div class="container">
+    <a class="btn-btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+  Link with href
+</a>
+<button class="btn-btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+  Button with data-bs-target
+</button>
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+    <span class="btn-close">+</span>
+  </div>
+  <div class="offcanvas-body">
+      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+    </div>
+    <div class="dropdown mt-3">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+        Dropdown button
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<script src="variation7.js"></script>
+</body>
+</html>
