@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+.card-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}h2 {
+    font-size: 35px;
+    line-height: 42px;
+    text-align: center;
+    margin-bottom: 23px;
+}.card-container-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    align-items: center;
+}
+input[type="text"] {
+    font-size: 18px;
+    line-height: 24px;
+    width: 100%;
+    min-height: 60px;
+    border-radius: 8px;
+    max-width: 408px;
+    background: #f7f;
+}button.listadd {
+    width: 100%;
+    max-width: 410px;
+    min-height: 60px;
+    margin-top: 40px;
+    font-size: 30px;
+    border-radius: 9px;
+    background: orange;
+    color: #000;
+    font-weight: 500;
+    line-height: 38px;
+}.card-container-items {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-top: 30px;
+    
+    flex-direction: column;
+    gap: 20px;
+}
+.itemslist {
+    display: flex;
+    justify-content: space-between;
+    background: purple;
+    padding: 1.5rem;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 650px;
+}
+p {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 500;
+    color: wheat;
+}button.Deleteitem {
+    padding: 12px 24px;
+    font-size: 22px;
+    cursor: pointer;
+    border-radius: 4px;
+    background: red;
+}
+
+</style>
+
+<body>
+    <div class="card-container">
+        <div class="card">
+            <h2>Todo-list</h2>
+        </div>
+        <div class="card-container-list">
+            <input type="text">
+            <button class="listadd">Add</button>
+        </div>
+        <div class="card-container-items">
+           
+        </div>
+    </div>
+    <script>
+        const input = document.querySelector('input');
+        const button = document.querySelector('.listadd');
+        const container = document.querySelector('.card-container-items');
+        button.addEventListener('click',function(){
+              let count = input.value;
+  if (count.trim() === "") {
+    confirm("Enter something");
+    return;
+  }
+            container.insertAdjacentHTML("beforeend",`<div class="itemslist">
+                <p>${input.value}</p>
+                <div class="items-checker">
+                 <button class="Deleteitem">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>`);
+    input.value="";
+        });
+        container.addEventListener('click',function(e){
+        if(e.target.classList.contains("Deleteitem")){
+         e.target.closest(".itemslist").remove();
+        }
+        });
+       
+    </script>
+</body>
+</html>

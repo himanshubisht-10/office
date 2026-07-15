@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=], initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container {
+    display: flex;
+    gap: 30px;
+    background: grey;
+    width: 100%;
+    max-width: 314px;
+    padding: 20px;
+}
+
+div#adcount {
+    padding: 10px 20px;
+    background: aliceblue;
+}
+    button#increasecount {
+    padding: 8px 20px;
+    font-size: 18px;
+    font-family: fantasy;
+    cursor:pointer;
+}
+
+button#decreasecount {
+    padding: 8px 20px;
+    font-size: 18px;
+    font-family: fantasy;
+    cursor:pointer;
+}
+button#resetcount{
+     padding: 8px 20px;
+    font-size: 18px;
+    font-family: fantasy;
+    cursor:pointer;
+
+}
+</style>
+<body>
+   
+    <div class="container">
+        <div id ="adcount">0</div>
+        <button id="increasecount">+</button>
+          <button id="resetcount">reset</button>
+        <button id="decreasecount">-</button>
+      
+    </div>
+    <script>
+        const items = document.getElementById('adcount');
+        const increase =document.getElementById('increasecount');
+        const reset =document.getElementById('resetcount')
+        const decrease =document.getElementById('decreasecount');
+        let count=0;
+        increase.addEventListener('click',function(){
+            console.log("increase");
+            if(count < 10){
+            count++;
+           items.innerText = count;
+         
+            }
+        });
+        decrease.addEventListener('click',function(){
+            if(count >0){
+            count--;
+            items.innerText = count;
+            }
+        });
+       reset.addEventListener('click',function(){
+            count = 0;
+            items.innerText = count;
+        });
+        
+    </script>
+
+</body>
+</html>

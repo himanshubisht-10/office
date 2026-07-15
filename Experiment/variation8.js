@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
     exampleModal.classList.remove("show");
   });
 
- 
   body.addEventListener("click", (e) => {
     if (!exampleModal.contains(e.target)) {
       exampleModal.classList.remove("show");

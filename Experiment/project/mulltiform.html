@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+      * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: lightblue;
+    font-family: Arial, sans-serif;
+}
+
+.card {
+    width: 90%;
+    max-width: 650px;
+    background: white;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+
+
+h1 {
+    font-size: 35px;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+h2 {
+    margin: 25px 0 20px;
+}
+
+
+.stepcontainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.step {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+}
+
+#step1 {
+    background: rebeccapurple;
+}
+
+.num {
+    height: 3px;
+    flex: 1;
+    background: #ddd;
+    margin: 0 10px;
+}
+
+
+
+.field {
+    margin-bottom: 20px;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+input,
+select {
+    width: 100%;
+    min-height: 45px;
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    border-color: rebeccapurple;
+}
+
+
+
+.row {
+    display: flex;
+    gap: 20px;
+}
+
+.row .field {
+    flex: 1;
+}
+
+
+
+.error-message,
+.error-msg {
+    color: red;
+    font-size: 13px;
+    margin-top: 5px;
+    display: none;
+}
+
+/* Choice cards */
+
+.choice-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.choice {
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.choice:hover {
+    border-color: rebeccapurple;
+}
+
+.choice input {
+    width: auto;
+    min-height: auto;
+    margin-right: 8px;
+}
+
+
+.form-step,
+.field-step {
+    display: none;
+}
+
+
+
+.summary {
+    text-align: center;
+    padding: 30px;
+}
+
+.mark {
+    width: 60px;
+    height: 60px;
+    margin: auto;
+    border-radius: 50%;
+    background: green;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+.action {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.action button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-prev {
+    background: #ddd;
+}
+
+.btn-next {
+    background: rebeccapurple;
+    color: white;
+}
+/* Mobile */
+
+@media (max-width: 600px) {
+    .card {
+        padding: 20px;
+    }
+
+    .row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .choice-grid {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+}
+    </style>
+    <div class="card">
+        <div class="card-head">
+         <h1>Information fill here</h1>
+          </div>
+        <div class="stepcontainer">
+        <div class="step" id="step1">1</div>
+        <span class="num"></span>
+        <div class="step" id="step2">2</div>
+            <span class="num"></span>
+            <div class="step" id="step">3
+            </div>
+        </div>
+        <div class="form-step-visiable" data-step="1">
+            <h2>your Details</h2>
+            <div class="field" id="field-name">
+                <label for="fullName">FullName</label>
+                <input type="text" id="fullName" placeholder="john-moh">
+                <div class="error-message">Enter the full Name</div>
+            </div>
+            <div class="row">
+                <div class="field" id="field-email">
+                    <label for="Email">Email</label>
+                    <input type="text" id="Email" placeholder="@gamil.com">
+                    <div class="error-message">enter the Email</div>
+                </div>
+                <div class="field" id="field-phone">
+                 <label for ="phone">Phone</label>
+                 <input type="text" id="phone" placeholder="91+0000">
+                 <div class="error-message">enter the phoneno</div>
+                </div>
+            </div>
+        </div>
+        
+    <!-- Step 2 -->
+    <div class="form-step" data-step="2">
+      <h2>Choose a session</h2>
+      <div class="field" id="field-track">
+        <label>Track</label>
+        <div class="choice-grid" id="trackGrid">
+          <label class="choice" data-value="Design">
+            <input type="radio" name="track" value="Design">Design Fundamentals
+          </label>
+          <label class="choice" data-value="Code">
+            <input type="radio" name="track" value="Code">Hands-on Code
+          </label>
+          <label class="choice" data-value="Strategy">
+            <input type="radio" name="track" value="Strategy">Product Strategy
+          </label>
+          <label class="choice" data-value="Writing">
+            <input type="radio" name="track" value="Writing">Technical Writing
+          </label>
+        </div>
+        <div class="error-msg">Pick one track to continue.</div>
+      </div>
+      <div class="field" id="field-date">
+        <label for="sessionDate">Date</label>
+        <select id="sessionDate">
+          <option value="">Select a date</option>
+          <option>Tue, July 14</option>
+          <option>Thu, July 16</option>
+          <option>Sat, July 18</option>
+        </select>
+        <div class="error-msg">Select a date.</div>
+      </div>
+    </div>
+        
+        <!--step3 -->
+        <div class="field-step" data-step="3">
+           <h2>Review $ confirm</h2>
+           <div class="summary" id="summary">
+            <div class="mark">✓</div>
+              <h2> You're registered</h2>
+            </div>
+            </div>
+            <div class="action">
+                <button class="btn-prev">prev</button>
+                <button class="btn-Next">Next</button>
+            </div>
+           
+           
+    </div>
+    <script>
+        const circles = document.querySelectorAll(".step");
+const steps = document.querySelectorAll("[data-step]");
+const nextBtn = document.querySelector(".btn-Next");
+const prevBtn = document.querySelector(".btn-prev");
+const lines = document.querySelectorAll('.num');
+
+let currentStep = 1;
+
+
+function showStep() {
+
+   
+     steps.forEach(function (step) {
+         step.style.display = "none";
+     });
+
+
+   
+    document.querySelector(
+        `[data-step="${currentStep}"]`
+    ).style.display = "block";
+
+
+   
+    circles.forEach(function (circle, index) {
+
+        if (index < currentStep) {
+            circle.style.background = "rebeccapurple";
+        } else {
+           circle.style.background="#ddd";
+        }
+
+    });
+    lines.forEach(function (number,index){
+     if(index < currentStep-1){
+        number.style.background ="blue";
+
+     }
+     else{
+         number.style.background='#ddd';
+     }
+ });
+
+}
+
+
+
+nextBtn.addEventListener("click", function () {
+
+
+   
+    if (currentStep === 1) {
+
+        const fullName = document.getElementById("fullName");
+        const email = document.getElementById("Email");
+        const phone = document.getElementById("phone");
+
+        let hasError = false;
+
+
+        // Name
+        if (fullName.value.trim() === "") {
+            fullName.nextElementSibling.style.display = "block";
+            hasError = true;
+        } else {
+            fullName.nextElementSibling.style.display = "none";
+        }
+
+
+        // Email
+        if (email.value.trim() === "") {
+            email.nextElementSibling.style.display = "block";
+            hasError = true;
+        } else {
+            email.nextElementSibling.style.display = "none";
+        }
+
+
+        // Phone
+        if (phone.value.trim() === "") {
+            phone.nextElementSibling.style.display = "block";
+            hasError = true;
+        } else {
+            phone.nextElementSibling.style.display = "none";
+        }
+
+
+        if (hasError) {
+            return;
+        }
+    }
+
+
+  
+    if (currentStep === 2) {
+
+        const track = document.querySelector(
+            'input[name="track"]:checked'
+        );
+
+        const date = document.getElementById("sessionDate");
+
+        const trackError = document.querySelector(
+            "#field-track .error-msg"
+        );
+
+        const dateError = document.querySelector(
+            "#field-date .error-msg"
+        );
+
+        let hasError = false;
+
+
+      
+        if (!track) {
+            trackError.style.display = "block";
+            hasError = true;
+        } else {
+            trackError.style.display = "none";
+        }
+
+
+       
+        if (date.value === "") {
+            dateError.style.display = "block";
+            hasError = true;
+        } else {
+            dateError.style.display = "none";
+        }
+
+
+        if (hasError) {
+            return;
+        }
+    }
+
+
+   
+    if (currentStep < steps.length) {
+        currentStep++;
+        showStep();
+    }
+
+});
+
+
+
+prevBtn.addEventListener("click", function () {
+
+    if (currentStep > 1) {
+        currentStep--;
+        showStep();
+    }
+
+});
+
+
+showStep();
+    </script>
+</body>
+</html>

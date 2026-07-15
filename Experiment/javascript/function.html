@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //decalaration function
+      function greet() {
+        console.log("himanshu");
+      }
+
+      greet();
+      //arrow function
+      let name = () => {
+        console.log("bisht");
+      };
+
+      // function para
+
+      function show(para1, para2) {
+        console.log("Name:", para1);
+        console.log("Age:", para2);
+      }
+      show("rohit", 34);
+      // Anonymous functions
+      setTimeout(() => {
+        console.log("hello");
+      }, 20000);
+
+      // Named function
+      let say = function hello() {
+        console.log("name");
+      };
+      say();
+
+      //IIFI function
+      (function () {
+        console.log("hello world");
+      })();
+      //call back function
+      function user(){
+        console.log("print"+ name);
+      }
+      function processUser(callback){
+         callback("rahul");
+      }
+      processUser(user);
+    </script>
+  </body>
+</html>

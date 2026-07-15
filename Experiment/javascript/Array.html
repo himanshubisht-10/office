@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let car =["alt", "BMW", "swift"];
+        console.log(car);
+        let num =[1,2,4,5,6,]
+        let b = num.join("and");
+        console.log(b,typeof b);
+        let c = num.slice(4);
+        console.log(c,num);
+        let d = num.unshift(9);
+        console.log(d,num);
+        let  arr = [3,5,6,4,];
+        let a = arr.map((value)=>{
+            console.log(value)
+            return value + 1
+        })
+        console.log(a);
+        let arr1 = [3,5,6,4];
+
+let a1 = arr1.filter((value)=>{
+    console.log(value);
+    return value < 6;
+});
+
+console.log(a1);
+console.log(arr1);
+
+    </script>
+</body>
+</html>

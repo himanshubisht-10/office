@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    margin-top: 30px;
+}
+.card {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background: gray;
+    border-radius: 12px;
+}
+input[type="text"] {
+    width: 100%;
+    min-height: 62px;
+    border-radius: 8px;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}.calculator {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}button.num {
+    font-size: 18px;
+    line-height: 24px;
+    padding: 20px 5px;
+    border-radius: 12px;
+}button.op {
+    border-radius: 6px;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 500;
+    background: orange;
+}button.num.equal {
+    background: purple;
+}
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="card-calculator">
+            <input type="text">
+        </div>
+        <div class="calculator">
+         <button class="num">C</button>
+         <button class="num">De</button>
+         <button class="num">%</button>
+         <button class="op">/</button>
+         
+         <button class="num">7</button>
+         <button class="num">8</button>
+         <button class="num">9</button>
+         <button class="op">*</button>
+         
+         <button class="num">4</button>
+         <button class="num">5</button>
+         <button class="num">6</button>
+         <button class="op">+</button>
+
+         
+         <button class="num">1</button>
+         <button class="num">2</button>
+         <button class="num">3</button>
+         <button class="op">-</button>
+         
+         <button class="dot">.</button>
+         <button class="zero">0</button>
+         <button class="num  equal">=</button>
+         
+
+        </div>
+    </div>
+    <script>
+const display = document.querySelector("input");
+const buttons = document.querySelectorAll("button");
+
+let current = "";
+ let previous = null;
+ let operator = null;
+
+function calculate() {
+     const a = Number(previous);
+    const b = Number(current);
+    let result;
+
+    if (operator === "+") {
+        result = a + b;
+    } 
+    else if (operator === "-") {
+        result = a - b;
+    } 
+    else if (operator === "*") {
+        result = a * b;
+    } 
+    else if (operator === "/") {
+        result = b === 0 ? "Error" : a / b;
+    } 
+     else if (operator === "%") {
+        result = a % b;
+    }
+    else {
+        return;
+    }
+
+     current = String(result);
+    previous = null;
+    operator = null;
+}
+
+buttons.forEach(function (button) {
+    button.addEventListener("click", function () {
+        const value = button.textContent.trim();
+        if (value === "C") {
+            current = "";
+             previous = null;
+             operator = null;
+        }
+        else if (value === "De") {
+            current = current.slice(0, -1);
+        }
+        else if (["+", "-", "*", "/","%"].includes(value)) {
+            previous = current;
+            operator = value;
+            current = "";
+        }
+        else if (value === "=") {
+            calculate();
+        }
+        
+        else {
+            current += value;
+        }
+
+        display.value = current;
+    });
+}); 
+
+
+    
+        
+    
+</script>
+
+</body>
+</html>

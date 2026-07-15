@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 class="container"></h1>
+
+    <script>
+      // primitive data types
+      let a = 4;
+      let b = null;
+      let c = undefined;
+      let d = Symbol;
+      let e = Boolean;
+      let f = String;
+      let g = BigInt(45435434);
+      console.log(a, b, c, d, e, f, g);
+      // non- primitive data types
+      let student = {
+        name: "mahi",
+        age: 45,
+      };
+      console.log(student);
+      const container = document.querySelector(".container");
+      container.innerHTML =` 
+         name:${student.name}
+        Age: ${student.age}`
+        
+    </script>
+  </body>
+</html>
