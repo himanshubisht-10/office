@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A/B Testing Section Demo</title>
+
+<style>
+  /* ============================================
+     GLOBAL RESET & BASE STYLES
+     Ye har jagah same font/spacing dene ke liye hai
+  ============================================ */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #0f1117;
+    color: #eef0f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+
+  /* ============================================
+     A/B TEST SECTION WRAPPER
+     Ye poora section jo website me add hoga
+  ============================================ */
+  .ab-test-section {
+    max-width: 420px;
+    width: 100%;
+    background: linear-gradient(145deg, #1a1d29, #14161f);
+    border: 1px solid #2a2e3d;
+    border-radius: 16px;
+    padding: 36px 30px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  }
+
+  /* Eyebrow label - batata hai ye kaunsa test/variant hai (debug ke liye) */
+  .variant-tag {
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #8b8fa3;
+    background: #23263344;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 18px;
+  }
+
+  .headline {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  .subtext {
+    font-size: 15px;
+    color: #a9adc1;
+    margin-bottom: 26px;
+  }
+
+  /* Price display */
+  .price {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 24px;
+  }
+  .price span {
+    font-size: 16px;
+    color: #a9adc1;
+    font-weight: 400;
+  }
+
+  /* ============================================
+     CTA BUTTON
+     Ye wo element hai jiska hum A/B test kar rahe hain
+     (color aur text dono variant me change honge)
+  ============================================ */
+  .cta-button {
+    width: 100%;
+    padding: 14px 0;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+  }
+
+  .cta-button:hover {
+    transform: translateY(-2px);
+    opacity: 0.92;
+  }
+
+  /* Variant A style — Blue (trust/calm) */
+  .variant-a .cta-button {
+    background: #4f7cff;
+    color: #fff;
+  }
+
+  /* Variant B style — Orange (urgency/energy) */
+  .variant-b .cta-button {
+    background: #ff7a45;
+    color: #fff;
+  }
+
+  .fine-print {
+    font-size: 12px;
+    color: #6d7185;
+    margin-top: 14px;
+  }
+</style>
+</head>
+<body>
+
+  <!-- ============================================
+       A/B TEST SECTION (HTML)
+       JS is section ke andar variant-a ya variant-b
+       class add karega, aur text/button badlega
+  ============================================ -->
+  <section class="ab-test-section" id="ab-section">
+    <span class="variant-tag" id="variant-label">Loading...</span>
+    <h2 class="headline" id="headline-text">Pro Plan</h2>
+    <p class="subtext" id="subtext-text">Sabhi premium features unlock karo</p>
+    <div class="price">₹499<span>/month</span></div>
+    <button class="cta-button" id="cta-btn">Start Free Trial</button>
+    <p class="fine-print">Card required nahi, kabhi bhi cancel karo</p>
+  </section>
+
+<script>
+  /* ============================================
+     A/B TESTING LOGIC (JavaScript)
+     ============================================
+     Idea: User ko random 50-50 chance se
+     Variant A ya Variant B dikhaya jaata hai.
+     Real project me ye split server/analytics
+     tool (Google Optimize, PostHog, etc.) se
+     control hota hai, yahan hum ise simple
+     JS se simulate kar rahe hain.
+  */
+
+  // Step 1: Dono variants ka content ek object me define karo
+  // (isse future me naya variant add karna easy hoga)
+  const variants = {
+    A: {
+      label: "Variant A",
+      headline: "Pro Plan",
+      subtext: "Sabhi premium features unlock karo",
+      buttonText: "Start Free Trial",
+      className: "variant-a"
+    },
+    B: {
+      label: "Variant B",
+      headline: "Limited Offer — Pro Plan",
+      subtext: "Aaj hi upgrade karo, offer jaldi khatam!",
+      buttonText: "Claim My Discount",
+      className: "variant-b"
+    }
+  };
+
+  // Step 2: Random tareeke se decide karo kaunsa variant dikhana hai
+  // Math.random() 0 se 1 ke beech number deta hai
+  // agar 0.5 se kam aaya to A, warna B (isse 50-50 split hota hai)
+  function pickVariant() {
+    return Math.random() < 0.5 ? "A" : "B";
+  }
+
+  // Step 3: Chuna hua variant page par apply karo
+  function applyVariant(variantKey) {
+    const data = variants[variantKey];
+    const section = document.getElementById("ab-section");
+
+    // Purana variant class hatao, naya lagao
+    section.classList.remove("variant-a", "variant-b");
+    section.classList.add(data.className);
+
+    // Text content update karo
+    document.getElementById("variant-label").textContent = data.label;
+    document.getElementById("headline-text").textContent = data.headline;
+    document.getElementById("subtext-text").textContent = data.subtext;
+    document.getElementById("cta-btn").textContent = data.buttonText;
+
+    // Kis variant ko user ne dekha, wo yaad rakho
+    // taaki click hone par pata chale konsa version tha
+    section.dataset.currentVariant = variantKey;
+  }
+
+  // Step 4: Click track karo (ye asli project me analytics ko bhejta hai)
+  function trackClick(variantKey) {
+    // Abhi ke liye hum console me log kar rahe hain.
+    // TODO: yahan real analytics call add karo, jaise:
+    // fetch('/api/track', { method: 'POST', body: JSON.stringify({variant: variantKey}) })
+    console.log(`Click hua! Variant "${variantKey}" ne convert kiya.`);
+    alert(`Tracked: Variant ${variantKey} button clicked ✅`);
+  }
+
+  // Step 5: Page load hote hi variant assign karo
+  const chosenVariant = pickVariant();
+  applyVariant(chosenVariant);
+
+  // Step 6: Button par click listener lagao
+  document.getElementById("cta-btn").addEventListener("click", function () {
+    trackClick(chosenVariant);
+  });
+
+  /* NOTE: Har page refresh par naya random variant milega.
+     Real A/B test me user ko same variant baar-baar dikhana
+     hota hai (cookie/localStorage se save karke), taaki
+     experience consistent rahe. */
+</script>
+
+</body>
+</html>

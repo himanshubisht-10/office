@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>A/B testing</h2>
+    <button id="mybutton">click me</button>
+    <p id="result"></p>
+    <script>
+      // first question
+      function checkDiscount() {
+        let count = Math.random();
+        if (count < 0.1) {
+          return "50% discount";
+        } else if (count < 0.4) {
+          return "20% discount";
+        } else {
+          return "No discount";
+        }
+      }
+      console.log(checkDiscount());
+      //second question
+      function assignUser() {
+        let num = Math.random();
+        if (num < 0.9) {
+          return "control";
+        } else {
+          return "experiment";
+        }
+      }
+      console.log(assignUser());
+      let count = { views: 0 };
+      function addView() {
+        count.views++;
+      }
+
+      addView();
+      addView();
+      addView();
+      addView();
+      addView();
+      console.log(count);
+    //   // 3 question
+    //   let stats = { A: 0, B: 0 };
+
+    //   function trackClick(variant) {
+    //     if (variant === "A") {
+    //       stats.A++;
+    //     } else {
+    //       stats.B++;
+    //     }
+
+    //     localStorage.setItem("stats", JSON.stringify(stats));
+    //   }     
+    //   trackClick("A");
+    //   trackClick("B");
+    //   trackClick("A");
+
+    //   console.log(JSON.parse(localStorage.getItem("stats")));
+      let stat = { A: 0, B: 0 };
+
+
+      // Save karna
+      localStorage.setItem("stat", JSON.stringify(stat));
+
+      // Nikaalna
+      let saved = localStorage.getItem("stat");
+      let statsObject = JSON.parse(saved);
+
+      console.log(statsObject);
+      //six question
+      // { A: 0, B: 0 }
+      let track = { c: 0, B: 0 };
+      sessionStorage.setItem("track", JSON.stringify(stat));
+      let save = sessionStorage.getItem("track");
+      let object = JSON.parse(save);
+      console.log(object);
+      // seven question for conversion rate
+      let sta = {
+        A: { views: 50, clicks: 10 },
+        B: { views: 50, clicks: 20 },
+        C: { views: 100, clicks: 45 },
+      };
+
+      function getConversionRate(variant) {
+        let data = sta[variant]; // stats["A"] ya stats["B"] nikaal liya
+        let rate = (data.clicks / data.views) * 100;
+
+        return rate;
+      }
+
+      console.log(getConversionRate("A")); // 20
+      console.log(getConversionRate("B")); // 40
+      console.log(getConversionRate("C"));
+
+      // eight question for conversion compare
+      let stage = {
+        A: { views: 50, clicks: 10 },
+        B: { views: 50, clicks: 20 },
+        C: { views: 100, clicks: 45 },
+      };
+      function getWinner() {
+        let rateA = getConversionRate("A");
+        let rateB = getConversionRate("B");
+        if (rateA > rateB) {
+          return "A is winning";
+        } else if (rateB > rateA) {
+          return "B is winning";
+        } else {
+          return "It's a tie";
+        }
+      }
+      console.log(getWinner());
+      // 9th question
+      let step = {
+        A: { views: 0, clicks: 0 },
+        B: { views: 0, clicks: 0 },
+      };
+      function trackView(variant) {
+        let data = step[variant]; // stats["A"] ya stats["B"] nikaal liya
+        data.views++;
+      }
+      trackView("A");
+      trackView("A");
+      trackView("B");
+      console.log(step);
+      //11 eleventh questi reset of the rate and variations
+      let badges = {
+        A: { views: 2, clicks: 0 },
+        B: { views: 1, clicks: 0 },
+      };
+
+      function resetStats() {
+        badges.A = { views: 0, clicks: 0 };
+        badges.B = { views: 0, clicks: 0 };
+      }
+
+      resetStats();
+      console.log(badges);
+      //12th questions
+
+
+// let st = {
+//   A: { views: 50, clicks: 10 },
+//   B: { views: 50, clicks: 20 }
+// };
+
+// function getConversionRate(variant){
+//     let data = st[variant];
+//     let rate = (data.clicks / data.views) * 100;
+//     return rate;
+// }
+
+// function getImprovement() {
+//     let rateA = getConversionRate("A");
+//     let rateB = getConversionRate("B");
+//     let improvement = ((rateB - rateA) / rateA) * 100;
+//     return improvement;
+// }
+
+// console.log(getImprovement());
+const button = document.getElementById("mybutton");
+const content = document.getElementById("result");
+ function getVariant(){
+     let num = Math.random();
+     if(num<0.5){
+         return "A";
+     }
+     else{
+         return "B";
+     }
+}
+ let stats = { A: 0, B: 0 };
+
+      function trackClick(variant) {
+        if (variant === "A") {
+          stats.A++;
+        } else {
+          stats.B++;
+        }
+    }
+    let variant;
+    let savedVariant = localStorage.getItem("variant");
+
+    if(savedVariant){
+        variant = savedVariant;              
+    } else {
+        variant = getVariant();               
+        localStorage.setItem("variant", variant);   
+    }
+    
+
+    if(variant === "A"){
+        button.style.background = 'blue';
+    }else{
+        button.style.background = 'green';
+    }
+    if(variant==="A"){
+        button.style.background = 'blue';
+    }else{
+        button.style.background='green';
+    }
+
+    button.addEventListener('click',function(){
+        trackClick(variant); 
+    content.innerHTML =  "You clicked variant: " + variant + " (Total clicks: " + stats[variant] + ")";  // phir dikhao
+     
+    
+});
+
+
+
+    </script>
+  </body>
+</html>

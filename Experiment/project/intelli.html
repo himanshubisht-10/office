@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+    }
+    html{
+    scroll-behavior:smooth;
+}
+    .nav-top {
+    background: #fff;
+    padding: 12px 24px;
+}.nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.logo-img {
+    width: 100%;
+    max-width: 200px;
+}
+img {
+    width: 100%;
+}
+ul.list-items {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+}
+li {
+    list-style: none;
+}
+a.items {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 500;
+    color: #000;
+    text-decoration: none;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+}.nav-btn {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+a.logo {
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #000;
+    text-decoration: none;
+}
+
+a.signup {
+    opacity: 1;
+    border-radius: 4px;
+    padding-top: 11px;
+    padding-right: 23px;
+    padding-bottom: 11px;
+    padding-left: 23px;
+    background: #2667FF;
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: 0px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.toggle {
+    font-size: 24px;
+    line-height: 32px;
+    color: #000;
+    font-weight: 500;
+    display: none;
+}
+section.home-section {
+    padding: 80px 20px;
+    background: #2667FF14;
+}
+.home-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+
+}.home-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:20px;
+}
+.home-content {
+    width: 100%;
+    max-width: 585px;
+}
+h1 {
+    font-family: Poppins;
+    font-weight: 300;
+    font-size: 64px;
+    line-height: 80px;
+    letter-spacing: 0px;
+    color: #000;
+    margin:0;
+}p {
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: 0px;
+    color:#000;
+    margin-bottom:12px;
+}li {
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0px;
+}
+.home-buttons {
+    display: flex;
+    gap: 26px;
+    margin-left:30px;
+    margin-top:20px;
+}
+
+a.primary {
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    opacity: 1;
+    border-radius: 6px;
+    padding-top: 11px;
+    padding-right: 35px;
+    padding-bottom: 11px;
+    padding-left: 35px;
+    background: #2667FF;
+    text-decoration: none;
+}
+a.secondary {
+    opacity: 1;
+    border-radius: 6px;
+    padding-top: 11px;
+    padding-right: 25px;
+    padding-bottom: 11px;
+    padding-left: 25px;
+    border-width: 2px;
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    background: #fff;
+    text-decoration: none;
+    color: #2667ff;
+}
+.home-img {
+    width: 100%;
+    max-width: 500px;
+}
+ .home-img img {
+    width: 100%;
+    border-radius: 12px;
+}
+section.products-section {
+    padding: 80px 30px;
+    background: #fff;
+}
+.products-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+.products-wrapper {
+    display: flex;
+    justify-content: space-around;
+    gap:20px;
+}
+.products-right-items {
+    width: 100%;
+    max-width: 647px;
+
+}
+.products-heading {
+    text-align: center;
+}
+.products-img {
+    width: 100%;
+    max-width: 573px;
+    text-align: center;
+    margin-top: 92px;
+}
+.products-list {
+    opacity: 1;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-left: 2px solid #2667FF;
+    width: 100%;
+    max-width: 667px;
+    border-style: solid;
+    border-color: #0000001A;
+    margin-bottom:12px;
+}h3 {
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.76px;
+    margin:0;
+    color: #333333;
+}
+section.pricing-section {
+    padding: 80px 30px;
+    background: #2667FF14;
+}
+.pricing-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}.pricing-heading {
+    text-align: center;
+}
+h2 {
+    font-family: Poppins;
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 55px;
+    letter-spacing: 0%;
+    text-align: center;
+    text-transform: capitalize;
+    color: #333333;
+    margin: 0;
+}
+p {
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: 0px;
+    color: #000;
+}
+.pricing-img {
+    width: 100%;
+    max-width: 89px;
+    margin:auto;
+}
+
+    .pricing-solves {
+    gap: 10px;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+.pricing-solve {
+    opacity: 1;
+    border-radius: 10px;
+    padding-top: 40px;
+    padding-right: 32px;
+    padding-bottom: 40px;
+    padding-left: 32px;
+    border-width: 1px;
+    background: #FFFFFF;
+    border: 1px solid #8125EC26;
+    width: 100%;
+    max-width: 320px;
+} .pricing-solve h3 {
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.76px;
+    margin: 0;
+    color: #333333;
+    text-align: center;
+} .pricing-solve p {
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: 0px;
+    color: #000;
+    text-align: center;
+}
+section.Build-scale-section {
+    padding: 90px 30px;
+    background: #fff;
+}
+.Build-scale-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+.Build-scale-heading {
+    text-align: center;
+
+}
+.Build-scales {
+    opacity: 1;
+    border-radius: 10px;
+    padding-top: 30px;
+    padding-right: 24px;
+    padding-bottom: 30px;
+    padding-left: 24px;
+    border-width: 1px;
+    border: 1px solid #2667FF26;
+    width: 100%;
+    max-width: 328px;
+}
+.Build-img {
+    width: 100%;
+    max-width: 40px;
+    margin-bottom: 16px;
+}
+.Build-scale-right {
+    display: flex;
+    justify-content: space-around;
+    gap: 12px;
+    flex-wrap: wrap;
+}.Build-scale-middle {
+    width: 100%;
+    max-width: 440px;
+    margin: auto;
+}section.install-section {
+    padding: 90px 30px;
+    background: #fff;
+}.install-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}.install-heading {
+    text-align: center;
+}
+.install-img {
+    width: 100%;
+    max-width: 400px;
+}
+.install-wrapper {
+    gap: 12px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}.install-active {
+    display: flex;
+    opacity: 1;
+    border-radius: 8px;
+    padding-top: 28px;
+    padding-right: 16px;
+    padding-bottom: 28px;
+    padding-left: 16px;
+    border-width: 2px;
+    background: #FFFFFF;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 460px;
+    gap:14px;
+    text-align:center;
+}.channel-contents {
+    opacity: 1;
+    border-radius: 10px;
+    padding-top: 25px;
+    padding-right: 21px;
+    padding-bottom: 25px;
+    padding-left: 21px;
+    border-width: 1px;
+    background: #FFFFFF;
+    border: 1px solid #8125EC1A;
+    width:100%;
+    max-width: 285px;
+}
+span.install-list {
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    padding: 6px;
+    box-shadow: 0px 0px 0px 1px #D3DBE5;
+    color: #000;
+    font-size: 16px;
+    line-height: 24px;
+    gap:12px;
+}section.channel-section {
+    padding: 90px 30px;
+    background: #F4F7FF;
+
+}.channel-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}.channel-heading {
+    text-align: center;
+    width: 100%;
+    max-width: 718px;
+    margin: auto;
+}.channel-content {
+    width: 100%;
+    max-width: 40px;
+}
+a.link {
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    color: #2667FF;
+    text-decoration: none;
+}.channel-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+section.Resources-section {
+    padding: 90px 30px;
+    background: #2667FF;
+
+}.next-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}.next-content {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+}.next-content h2 {
+    color:#fff;
+}
+.next-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+button.btn {
+    opacity: 1;
+    border-radius: 6px;
+    padding-top: 14px;
+    padding-right: 24px;
+    padding-bottom: 14px;
+    padding-left: 24px;
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24.5px;
+    letter-spacing: 0px;
+    color: #2667FF;
+    background: #fff;
+    border:none;
+}
+section.BoostBuddy-section {
+    padding: 90px 30px;
+    background: #fff;
+}
+.BoostBuddy-section-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+.BoostBuddy-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}.BoostBuddy-heading {
+    width: 100%;
+    max-width: 660px;
+    margin: auto;
+}.BoostBuddys {
+    opacity: 1;
+    border-radius: 10px;
+    padding-top: 46px;
+    padding-right: 43px;
+    padding-bottom: 46px;
+    padding-left: 43px;
+    border-width: 1px;
+    background: #FFFFFF;
+    border: 1px solid #0000001A;
+    width: 100%;
+    max-width: 371px;
+}.BoostBuddy-star {
+    width: 100%;
+    max-width: 25px;
+    display: flex;
+    gap: 12px;
+}.Boost-img {
+    width: 100%;
+    max-width: 44px;
+}
+.BoostBuddys.active{
+    display: block;
+}
+
+.pagination-dot {
+    gap: 14px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 20px;
+}.dot {
+    width: 15px;
+    height: 15px;
+    color: black;
+    border: 1px solid;
+    border-radius: 50%;
+}
+.dot.active{
+    background:#2667FF;
+}
+section.Blog-section {
+    padding: 80px 30px;
+    background: #F4F7FF;
+}
+.Blog-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}.Blogs-img {
+    width: 100%;
+    max-width: 382px;
+}
+.Blog-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 13px;
+    flex-wrap: wrap;
+}.Blogs-img img{
+    display: block;
+    width:100%;
+}
+span.Blogs {
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    opacity: 1;
+    padding-top: 2px;
+    padding-right: 18px;
+    padding-bottom: 2px;
+    padding-left: 18px;
+    border-radius: 40px;
+    background: #2667FF;
+}.Blogs-body {
+    padding: 19px;
+    width: 100%;
+    max-width: 255px;
+    text-align: center;
+}
+.Blogs-text {
+    margin-bottom: 10px;
+    display: flex;
+    gap: 17px;
+}
+span.Blogs {
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    opacity: 1;
+    padding-top: 2px;
+    padding-right: 18px;
+    padding-bottom: 2px;
+    padding-left: 18px;
+    border-radius: 40px;
+    background: #2667FF;
+
+}
+input[type="date"] {
+    border: none;
+    font-size: 14px;
+    line-height: 22px;
+}
+ .Blogs-img img {
+    width: 100%;
+    display: block;
+}
+.Blog-section-Blogs {
+    background: #fff;
+    border-radius: 12px;
+}
+.Blogs-body {
+    padding: 20px;
+    width: 100%;
+    max-width: 268px;
+}
+a.blogs-link {
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    color: #2667FF;
+    text-decoration: none;
+}
+.dropdown{
+    position:relative;
+}
+
+.arrow.rotate {
+    transform: rotate(180deg);
+}
+.arrow{
+    font-size:30px;
+    margin-left:5px;
+}
+.dropdown-menu{
+    display:none;
+}
+
+.dropdown-menu.active{
+    display:block;
+}
+.list-items a {
+    position: relative;
+    text-decoration: none;
+    color: #000;
+    padding-bottom: 8px;
+}
+
+.list-items a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #000;
+    transition: width 0.3s ease;
+}
+
+.list-items a:hover::after {
+    width: 100%;
+}
+
+
+
+
+/* dropdown hidden */
+.dropdown-menu{
+
+    position:absolute;
+    top:56px;
+    background:#fff;
+    width:200px;
+
+    padding:15px;
+    
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+
+}
+
+
+/* hover par show */
+
+
+
+.dropdown-menu li{
+
+    padding:10px;
+}
+
+
+.dropdown-menu a{
+
+    text-decoration:none;
+    color:#000;
+
+}
+  .fq-section {
+    padding: 80px 20px;
+    background: #fff;
+}.fq-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}.fq-wrapper {
+    width: 100%;
+    max-width: 880px;
+    margin: auto;
+}
+
+.fq-items {
+    padding: 20px ;
+   border:1px solid black;
+   margin-bottom: 12px;
+}
+.fq-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+span.arow {
+    font-size: 18px;
+    line-height: 24px;
+    color: #000;
+    font-weight: 500;
+    transform: rotate(267deg);
+}
+h2 {
+    font-size: 20px;
+    line-height: 26px;
+    color: #000;
+    font-weight: 500;
+}
+p {
+    font-size: 18px;
+    line-height: 24px;
+    color: #000;
+    font-weight: 400;
+    margin:0;
+}.fq-question {
+    display: none;
+}
+
+.fq-items.active .fq-question {
+    display: block;
+  
+}.arow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.fq-items.active .arow {
+    transform: rotate(90deg);
+}
+@media(max-width:768px){
+    
+
+
+    .nav-inner{
+        position: relative;
+    }
+
+    .toggle{
+        display:block;
+        cursor:pointer;
+        font-size:28px;
+        z-index:1000;
+    }
+
+
+    ul.list-items{
+        position:absolute;
+        top:70px;
+        left:0;
+        width:100%;
+        background:#fff;
+
+        display:none;
+        flex-direction:column;
+        gap:20px;
+
+        padding:30px 0;
+        text-align:center;
+
+        box-shadow:0 10px 20px rgba(0,0,0,0.1);
+    }
+
+
+    ul.list-items.active{
+        display:flex;
+    }
+
+
+    .nav-btn{
+        display:none;
+    }
+
+
+    a.items{
+        font-size:16px;
+    }
+
+
+    .logo-img{
+        max-width:150px;
+    }
+.channel-contents {
+    max-width:100%;
+}.pricing-solve{
+    max-width:100%;
+}.products-right-items{
+    display: none;
+
+} .BoostBuddy-wrapper {
+        display: block;
+    }
+
+    .BoostBuddys {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .BoostBuddys.active {
+        display: block;
+    }
+
+
+}
+</style>
+<body>
+    <div class="nav-top">
+        <div class="nav-inner">
+            <div class="logo-img">
+                <img src="https://i.postimg.cc/YCTQmDCP/Intelli-Convert-Logo-Blue-1.png">
+            </div>
+            <ul class="list-items">
+                <li><a class="items" href="#home">Home</a></li>
+                <li><a class="items" href="#products">Products</a><span class="arrow">⌄</span>
+                
+    <ul class="dropdown-menu">
+        <li><a class="items" href="#Build">Build To Scale</a></li>
+        <li><a  class="items" href="#install">Installation</a></li>
+        <li><a class="items" href="#channel">channel</a></li>
+        </ul>
+        </li>
+                <li><a class="items" href="#pricing">pricing</a></li>
+                <li><a class="items" href="#Resources">resources</a><span class="arrow">⌄</span>
+                 <ul class="dropdown-menu">
+        <li><a class="items" href="#BoostBuddy">BoostBuddy</a></li>
+        <li><a  class="items" href="#Blog">Blog</a></li>
+    </ul>
+</li>
+                </ul>
+                <div class="nav-btn">
+                <a class="logo" href="#signup/signin">signup/signin</a>
+                <a  class="signup" href="#explore">explore</a>
+                </div>
+                <div class="toggle"><span>☰</span>
+        </div>
+        </div>
+    </div>
+    <section class="home-section" id="home">
+        <div class="home-container">
+            <div class="home-wrapper">
+                    <div class="home-content">
+                        <div class="home-text">
+                            <h1>Transform Your Shopify Store with AI-Powered Excellence</h1>
+                            <P>BoostBuddy: Where smart technology meets 24/7 support to boost sales and enhance customer experience.</P>
+                        </div>
+                        <div class="home-items">
+                            <ul class="home-list">
+                                <li>24/7 Support: Instant answers for FAQs, orders & products.</li>
+                                <li> Boost Sales: Personalized recommendations for smoother shopping. Save Time: Automate tasks and focus on growth.</li>
+                                <li>Save Time: Automate tasks and focus on growth.</li>
+                            
+                            </ul>
+                        </div>
+                        <div class="home-buttons">
+                         <a class="primary" href="">Get start for free</a>
+                         <a class="secondary" href="">Try Demo Store</a>
+                        </div>
+                        </div>
+                        <div class="home-left">
+                        <div class="home-img">
+                            <img src="https://i.postimg.cc/Ghwn3GYf/Group-238013-1.jpg" alt="intelli">
+                        </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </section>
+    <section class="products-section" id ="products">
+        <div class="products-container">
+        <div class="products-heading">
+            <h2>Why Choose BoostBuddy AI?</h2>
+            <P>IntelliConvert AI is packed with features to elevate your Shopify store:</P>
+            </div>
+
+            <div class="products-wrapper">
+                <div class="products-right-items">
+                 <div class="products-img">
+                    <img src="https://i.postimg.cc/T35bj8hG/img-productdiscovery-(2).png">
+                 </div>
+                </div>
+                <div class="products-left-items">
+                    <div class="products-list">
+                        <h3>Product discovery</h3>
+                        <P>Help customers quickly find the products they’re looking for.
+                         Boost sales and delight customers with smart product discovery.</P>
+                    </div>
+                    <div class="products-list">
+                       <h3>Order tracking</h3>
+                       <P>Keep customers informed with real-time order 
+                        tracking updates. Automate updates so your team
+                         can focus on other tasks.</P>
+                    </div>
+                    <div class="products-list">
+                        <h3>24/7 customer support</h3>
+                        <P>Answer customer questions instantly. Improve 
+                            your shop's reliability with nonstop, AI-powered support.</P>
+                    </div>
+                    <div class="products-list">
+                        <h3>Update shopping carts</h3>
+                        <P>Shoppers can now manage their carts by chatting 
+                        with your AI Agent. Update items and quantities in one place.</P>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="pricing-section" id="pricing">
+        <div class="pricing-container">
+         <div class="pricing-heading">
+            <h2>Solve your biggest eCommerce Challenges" with Boostbuddy.</h2>
+            <P>While there are other AI chatbots for Shopify, IntelliConvert AI stands out with</P>
+         </div>
+         
+            <div class="pricing-solves">
+            <div class="pricing-solve">
+                <div class="pricing-img">
+                 <img src="https://i.postimg.cc/D0jTwMKM/img-cuttingedge-icon-(1).png">
+                 </div>
+                 <h3>Cutting-Edge Ai Technology</h3>
+                 <P>Leveraging the latest in natural language processing for smarter, more human-like interactions.</P>
+                </div>
+
+            <div class="pricing-solve">
+                <div class="pricing-img">
+                 <img src="https://i.postimg.cc/D0jTwMKM/img-cuttingedge-icon-(1).png">
+                 </div>
+                 <h3>Optimized for Shopify stores</h3>
+                 <P>Designed specifically for Shopify, with features that enhance the platform’s capabilities</P>
+                </div>
+            
+
+            <div class="pricing-solve">
+                <div class="pricing-img">
+                 <img src="https://i.postimg.cc/D0jTwMKM/img-cuttingedge-icon-(1).png">
+                 </div>
+                 <h3>24/7 Global Support</h3>
+                 <P>Available in multiple languages to serve a diverse customer base.</P>
+                </div>
+            
+
+            <div class="pricing-solve">
+                <div class="pricing-img">
+                 <img src="https://i.postimg.cc/D0jTwMKM/img-cuttingedge-icon-(1).png">
+                 </div>
+                 <h3>Deep Customization</h3>
+                 <P>From appearance to conversational style, make the AI agent uniquely yours.</P>
+                </div>
+            
+
+            <div class="pricing-solve">
+                <div class="pricing-img">
+                 <img src="https://i.postimg.cc/D0jTwMKM/img-cuttingedge-icon-(1).png">
+                 </div>
+                 <h3>Proven Results</h3>
+                 <P>Businesses using IntelliConvert AI have seen up to a 20% increase in conversions and a 30% reduction in support costs.</P>
+                </div>
+            </div>
+            </div>
+         </div>
+
+    </section>
+    <section class="Build-scale-section" id="Build">
+        <div class="Build-scale-container">
+            <div class="Build-scale-heading">
+                <h2>Build To Scale</h2>
+                <P>Open Boost Buddy in the Shopify App Store and install the dedicated app</P>
+            </div>
+            <div class="Build-scale-right">
+              <div class="Build-scales">
+                <div class="Build-img">
+                    <img src="https://i.postimg.cc/3xnnb0TH/img-scale-icon.png">
+                </div>
+                <div class="Build-items">
+                    <h3>Maximize Conversions</h3>
+                    <li>Turn more visitors into buyers with instant support and personalized assistance.</li>
+                    <li>Increase average order value with targeted recommendations and discount codes.</li>
+                </div>
+              </div>
+              
+               <div class="Build-scales">
+                <div class="Build-img">
+                    <img src="https://i.postimg.cc/L8tMqTL0/img-Enhancecustomer-icon.png">
+                </div>
+                <div class="Build-items">
+                    <h3>Maximize Conversions</h3>
+                   <li> Provide a superior shopping experience with fast, helpful responses.</li>
+                   <li>Build trust with 24/7 availability and accurate information.</li>
+                </div>
+              </div>
+              </div>
+               <div class="Build-scale-middle">
+                <img src="https://i.postimg.cc/qBww7CNX/img-intellirobot-(3).png">
+               </div>
+                
+               <div class="Build-scale-right">
+                 <div class="Build-scales">
+                <div class="Build-img">
+                    <img src="https://i.postimg.cc/CLFFj9LK/img-savetime-icon.png">
+                </div>
+                <div class="Build-items">
+                    <h3>Maximize Conversions</h3>
+                    <li>Turn more visitors into buyers with instant support and personalized assistance.</li>
+                    <li>Increase average order value with targeted recommendations and discount codes.</li>
+                </div>
+              </div>
+              
+               <div class="Build-scales">
+                <div class="Build-img">
+                    <img src="https://i.postimg.cc/nzJ8nQC3/Vector.png">
+                </div>
+                <div class="Build-items">
+                    <h3>Maximize Conversions</h3>
+                   <li> Provide a superior shopping experience with fast, helpful responses.</li>
+                   <li>Build trust with 24/7 availability and accurate information.</li>
+                </div>
+              </div>
+
+               </div>
+            </div>
+        </div>
+    </section>
+    <section class="install-section" id="install">
+        <div class="install-container">
+            <div class="install-heading">
+                <h2>Install BoostBuddy on Shopify in 3 simple steps</h2>
+                <P>Takes less than 5 minutes.</P>
+            </div>
+            <div class="install-wrapper">
+                <div class="install-left">
+                    <div class="install-img">
+                    <img src="https://i.postimg.cc/zBN7yDzB/img-install-icon-(1).png">
+                    </div>
+                </div>
+                <div class="install-right">
+                    <div class="install-items">
+                        <div class="install-active">
+                        <span class="install-list">1</span>
+                        <h3>Open Boost Buddy in the Shopify App Store and install the dedicated app</h3>
+                        </div>
+                        <div class="install-active">
+                        <span class="install-list">2</span>
+                        <h3>Open Boost Buddy in the Shopify App Store and install the dedicated app</h3>
+                        </div>
+                        <div class="install-active">
+                        <span class="install-list">3</span>
+                        <h3>Open Boost Buddy in the Shopify App Store and install the dedicated app</h3>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="channel-section" id="channel">
+        <div class="channel-container">
+            <div class="channel-heading">
+                <h2>Keep conversations going across channels </h2>
+                <P>Customers want to connect with you using their favorite channels
+                      Integrate Openup with multiple platforms to make sure. </P>
+            </div>
+            <div class="channel-wrapper">
+                <div class="channel-contents">
+                <div class="channel-content">
+                    <img src="https://i.postimg.cc/cLzgkdrx/img-website-icon.png">
+                    </div>
+                    <h3>Website</h3>
+                    <P>Reach out to visitors proactively  to boost website engagement.</P>
+                    <a class="link" href="#">More Details </a>
+                </div>
+                 <div class="channel-contents">
+                <div class="channel-content">
+                    <img src="https://i.postimg.cc/j57FnqJD/img-livechat-icon.png">
+                    </div>
+                    <h3>Livechat</h3>
+                    <P>Reach out to visitors proactively  to boost website engagement.</P>
+                    <a class="link" href="#">More Details </a>
+                </div>
+                <div class="channel-contents">
+                <div class="channel-content">
+                    <img src="https://i.postimg.cc/jjW8Bqvs/img-messenger-icon.png">
+                    </div>
+                    <h3>Messenger</h3>
+                    <P>Reach out to visitors proactively  to boost website engagement.</P>
+                    <a class="link" href="#">More Details </a>
+                </div>
+                <div class="channel-contents">
+                <div class="channel-content">
+                    <img src="https://i.postimg.cc/ZqycV7YX/img-slack-icon.png">
+                    </div>
+                    <h3>Slack</h3>
+                    <P>Reach out to visitors proactively  to boost website engagement.</P>
+                    <a class="link" href="#">More Details </a>
+                
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="Resources-section" id="Resources">
+        <div class="next-container">
+            <div class="next-wrapper">
+                <div class="next-content">
+                    <h2>Ready to take your store to the next level?</h2>
+                    </div>
+                <div class="next-btn">
+                <button class="btn">Get the app - Its free</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="BoostBuddy-section" id="BoostBuddy">
+        <div class="BoostBuddy-section-container">
+            <div class="BoostBuddy-heading">
+                <h2>BoostBuddy Received 4.8/5 Stars in Over 10,000+ Reviews.</h2>
+            
+            </div>
+        <div class="BoostBuddy-wrapper">
+            <div class="BoostBuddys">
+                <div class="BoostBuddy-star">
+                    <img src="https://i.postimg.cc/Z5ZkpNT2/Vector-(2).png">
+                    <img src="https://i.postimg.cc/Z5ZkpNT2/Vector-(2).png">
+                    <img src="https://i.postimg.cc/Z5ZkpNT2/Vector-(2).png">
+                    </div>
+                    <P>Maecenas eget ullamcorper dolor placerat ipsum.
+                         Aliquam dictum massa eu libero vehicula, 
+                         id dapibus ligula vulputate. Donec arcu elit</P>
+                         <div class="Boost-img">
+                            <img src="https://i.postimg.cc/nVRt8rGn/img-testimonial1-(1).png">
+                            </div>
+                            <h4>Max Conversion</h4>
+                            <span class="subtext">SEO Contain Writer</span>
+                        </div>
+
+                 <div class="BoostBuddys">
+                <div class="BoostBuddy-star">
+                    <img src="https://i.postimg.cc/Z5ZkpNT2/Vector-(2).png">
+                    <img src="https://i.postimg.cc/Z5ZkpNT2/Vector-(2).png">
+                    <img src="https://i.postimg.cc/Z5ZkpNT2/Vector-(2).png">
+                    </div>
+                    <P>Maecenas eget ullamcorper dolor placerat ipsum.
+                         Aliquam dictum massa eu libero vehicula, 
+                         id dapibus ligula vulputate. Donec arcu elit</P>
+                         <div class="Boost-img">
+                            <img src="https://i.postimg.cc/Vv6vYhh0/img-testimonial2.png">
+                            </div>
+                            <h4>Nathaneal Down</h4>
+                            <span class="subtext">Blogger</span>
+                         </div>
+
+                 <div class="BoostBuddys">
+                <div class="BoostBuddy-star">
+                    <img src="https://i.postimg.cc/Z5ZkpNT2/Vector-(2).png">
+                    <img src="https://i.postimg.cc/Z5ZkpNT2/Vector-(2).png">
+                    <img src="https://i.postimg.cc/Z5ZkpNT2/Vector-(2).png">
+                    </div>
+                    <P>Maecenas eget ullamcorper dolor placerat ipsum.
+                         Aliquam dictum massa eu libero vehicula, 
+                         id dapibus ligula vulputate. Donec arcu elit</P>
+                         <div class="Boost-img">
+                            <img src="https://i.postimg.cc/nVRt8rGn/img-testimonial1-(1).png">
+                            </div>
+                            <h4>Max Conversion</h4>
+                            <span class="subtext">SEO Contain Writer</span>
+                         </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="pagination-dot">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        </div>
+    </section>
+    <section class="Blog-section" id="Blog">
+        <div class="Blog-container">
+            <div class="Blog-wrapper">
+                <div class="Blog-section-Blogs">
+                    <div class="Blogs-img">
+                        <img src="https://i.postimg.cc/XYgsnYDw/127-0-0-1-5500-Inteli-Convert-index-html.png">
+
+                    </div>
+                    <div class="Blogs-body">
+                        <div class="Blogs-text">
+                            <span class="Blogs">creative</span>
+                            <input type="date"> 
+                        </div>
+                        <h3>Exploring The Power Of AI Text Generator</h3>
+                        <div class="Blogs-link">
+                            <a href="#" class="blogs-link">Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="Blog-section-Blogs">
+                    <div class="Blogs-img">
+                 <img src="https://i.postimg.cc/RhFBLY6G/img-blogimage2-1.png">
+
+                    </div>
+                    <div class="Blogs-body">
+                        <div class="Blogs-text">
+                            <span class="Blogs">creative</span>
+                            <input type="date"> 
+                        </div>
+                        <h3>Exploring The Power Of AI Text Generator</h3>
+                        <div class="Blogs-link">
+                            <a href="#" class="blogs-link">Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="Blog-section-Blogs">
+                    <div class="Blogs-img">
+                        <img src="https://i.postimg.cc/CKspT0b3/img-blogimage2-1-(2).png">
+
+                    </div>
+                    <div class="Blogs-body">
+                        <div class="Blogs-text">
+                            <span class="Blogs">creative</span>
+                            <input type="date"> 
+                        </div>
+                        <h3>Exploring The Power Of AI Text Generator</h3>
+                        <div class="Blogs-link">
+                            <a href="#" class="blogs-link">Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+      <div class="fq-section">
+      <div class="fq-container">
+        <div class="fq-wrapper">
+          <div class="fq-items">
+            <div class="fq-header">
+              <h2>Warum sollten wir unseren JGA über Pissup Reisen buchen?</h2>
+              <span class="arow">></span>
+              </div>
+              <div class="fq-question">
+                <p>
+                  Eine Reise zu organisieren ist immer eine Herausforderung –
+                  Und einen JGA für eine größere (oder auch kleine) Gruppe erst
+                  recht! Angebote einholen, Zeit und Programm abstimmen, Geld
+                  einsammeln: Stress & Frustration sind hier quasi
+                  vorprogrammiert! Unser Service setzt genau hier an: Wie nehmen
+                  euch den gesamten Planungsstress ab, passen euer Programm
+                  gemäß euren Wünschen (und Preisvorstellungen) an und sind auch
+                  vor Ort 24 Stunden 7 Tage die Woche für euch da! Mit uns kann
+                  auch der Trauzeuge den JGA genießen!
+                </p>
+              </div>
+            </div>
+            <div class="fq-items">
+            <div class="fq-header">
+              <h2>brauchen wir einen Reiseberater?</h2>
+              <span class="arow">></span>
+              </div>
+              <div class="fq-question">
+                <p>Wir planen jeden Tag legendäre Junggesellenabschiede und das 
+                    bereits seit 2001: Unsere Reiseberater helfen euch bei der 
+                    Planung eures Programms, der Kostenkalkulation und der 
+                    Kommunikation mit der Gruppe (falls gewünscht). Wir 
+                    erstellen euch auch gerne verschiedene Angebote, sodass
+                     ihr vergleichen und abstimmen könnt, was euch gefällt.
+                    
+                </p>
+              </div>
+            </div>
+            <div class="fq-items">
+            <div class="fq-header">
+              <h2>Warum sollten wir unseren JGA über Pissup Reisen buchen?</h2>
+              <span class="arow">></span>
+              </div>
+              <div class="fq-question">
+                <p>
+                  Eine Reise zu organisieren ist immer eine Herausforderung –
+                  Und einen JGA für eine größere (oder auch kleine) Gruppe erst
+                  recht! Angebote einholen, Zeit und Programm abstimmen, Geld
+                  einsammeln: Stress & Frustration sind hier quasi
+                  vorprogrammiert! Unser Service setzt genau hier an: Wie nehmen
+                  euch den gesamten Planungsstress ab, passen euer Programm
+                  gemäß euren Wünschen (und Preisvorstellungen) an und sind auch
+                  vor Ort 24 Stunden 7 Tage die Woche für euch da! Mit uns kann
+                  auch der Trauzeuge den JGA genießen!
+                </p>
+              </div>
+            </div>
+            <div class="fq-items">
+            <div class="fq-header">
+              <h2>Können wir unser Programm nachträglich ändern?</h2>
+              <span class="arow">></span>
+              </div>
+              <div class="fq-question">
+                <p>Natürlich! Bis zur Anzahlung der Buchung (50 % des Gesamtpreises) 
+                    sind alle Änderungen kostenfrei. Und natürlich könnt ihr jederzeit
+                     euren Reiseberater kontaktieren und Fragen stellen, ohne dass es 
+                     euch einen Cent kostet!
+                    
+                </p>
+              </div>
+            </div>
+            <div class="fq-items">
+            <div class="fq-header">
+              <h2>Wie sicher ist der Zahlungsvorgang?</h2>
+              <span class="arow">></span>
+              </div>
+              <div class="fq-question">
+                <p>Wir bieten euch unterschiedliche Zahlungsmöglichkeiten über 
+                    eine sichere Verbindung (per Kreditkarte, Sofortüberweisung, etc.) 
+                    nach den Datensicherheitsstandards des PCI Security Standards 
+                    Council an. Sobald ihr den Zahlungsauftrag aufgegeben habt, bekommt
+                     ihr eine vorläufige Zahlungsbestätigung und wenn das Geld bei uns
+                      eingegangen ist, schicken wir euch eine abschließende Bestätigung, 
+                      die ihr euch ausdrucken könnt.
+                            
+                
+                </p>
+              </div>
+            </div>
+            <div class="fq-items">
+            <div class="fq-header">
+              <h2>Was passiert nachdem wir euch eine Anfrage gesendet habe?</h2>
+              <span class="arow">></span>
+              </div>
+              <div class="fq-question">
+                <p>
+                    Euer persönlicher Reiseberater meldet sich innerhalb 
+                    von 24 Stunden mit einem maßgeschneiderten Angebot zurück.
+                </p>
+              </div>
+            </div>
+            <div class="fq-items">
+            <div class="fq-header">
+              <h2>Warum sollten wir unseren JGA über Pissup Reisen buchen?</h2>
+              <span class="arow">></span>
+              </div>
+              <div class="fq-question">
+                <p>
+                  Eine Reise zu organisieren ist immer eine Herausforderung –
+                  Und einen JGA für eine größere (oder auch kleine) Gruppe erst
+                  recht! Angebote einholen, Zeit und Programm abstimmen, Geld
+                  einsammeln: Stress & Frustration sind hier quasi
+                  vorprogrammiert! Unser Service setzt genau hier an: Wie nehmen
+                  euch den gesamten Planungsstress ab, passen euer Programm
+                  gemäß euren Wünschen (und Preisvorstellungen) an und sind auch
+                  vor Ort 24 Stunden 7 Tage die Woche für euch da! Mit uns kann
+                  auch der Trauzeuge den JGA genießen!
+                </p>
+              </div>
+            </div>
+          </div>
+       
+      </div>
+    </div>
+    
+<script>
+    const toggle = document.querySelector('.toggle');
+const menu = document.querySelector('.list-items');
+const icon = toggle.querySelector('span');
+
+
+toggle.addEventListener("click",()=>{
+
+    menu.classList.toggle("active");
+
+    if(menu.classList.contains("active")){
+        icon.textContent="✕";
+    }
+    else{
+        icon.textContent="☰";
+    }
+
+});
+const navLinks = document.querySelectorAll(".list-items a");
+
+navLinks.forEach(link => {
+    link.addEventListener("click", function () {
+        console.log('link')
+
+        // Pehle sabse active class hatao
+        navLinks.forEach(item => item.classList.remove("active"));
+
+        // Jis par click hua usme active add karo
+        this.classList.add("active");
+    });
+});
+const dots = document.querySelectorAll(".dot");
+const testimonials = document.querySelectorAll(".BoostBuddys");
+
+ function showSlide(index) {
+    dots.forEach(dot => 
+    dot.classList.remove("active"));
+    testimonials.forEach(testimonial => testimonial.classList.remove("active"));
+
+
+    dots[index].classList.add("active");
+    testimonials[index].classList.add("active");
+}
+
+dots.forEach((dot,index ) => {
+    dot.addEventListener("click", () => {
+        showSlide(index);
+    });
+});
+
+// Default first slide
+showSlide(0);
+const arrows = document.querySelectorAll('.arrow');
+
+arrows.forEach((arrow)=>{
+
+    arrow.addEventListener('click',()=>{
+
+        console.log("arrow clicked");
+
+
+        const dropdown = arrow.nextElementSibling;
+
+
+        dropdown.classList.toggle('active');
+
+
+        arrow.classList.toggle('rotate');
+        
+
+    });
+
+});
+      const items = document.querySelectorAll('.fq-items');
+        items.forEach(function(item){
+            item.addEventListener('click',function(){
+
+       const content = item.querySelector('.fq-question');
+
+        // close all other FAQ
+        items.forEach(function(otherItem){
+
+            if(otherItem !== item){
+                 otherItem.querySelector('.fq-question').style.display = "none";
+                otherItem.classList.remove('active');
+            }
+
+        });
+
+   
+    if(content.style.display ==="block"){
+         content.style.display ="none";
+         item.classList.remove('active');
+     }
+     else{
+        content.style.display ='block';
+        item.classList.add('active');
+     }
+        });
+    });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <script>
+              
+
+           
+           function fetchCollectionData(){
+  return fetch("https://shop.autotune.com/collections/shirts-1")
+    .then((response) => response.text());
+
+           }
+fetchCollectionData()
+  .then((html) => {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, "text/html");
+  
+    const products = doc.querySelectorAll(".product-grid .grid__item");
+    // check in the console 
+    console.log("Total Products:", products.length);
+  
+    products.forEach((product) => {
+      document.querySelector('body')
+        .appendChild(product.cloneNode(true));
+    
+    });
+  })
+  .catch(console.error);
+  
+  
+        </script>
+    </div>
+</body>
+</html>
